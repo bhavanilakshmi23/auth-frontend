@@ -65,7 +65,7 @@ const Dashboard = () => {
     <button className="btn btn-primary">Get Started</button>
   </div>
   <div className="div">
-    <img src="images.jpg" alt='crm.jpg' />
+    <img src="/images.jpg" alt='crm.jpg' />
   </div>
 </div>
 
