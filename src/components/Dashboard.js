@@ -56,18 +56,19 @@ const Dashboard = () => {
       </Navbar>
       </div>
      <br/>
-    <div id="home" className="div">
-        <div className="side1">
-            <h2>Digital Marketing</h2>
-            <h1>CRM</h1>
-            <p>Customer relationship management (CRM) is a technology for managing all your company's relationships and interactions
-            with customers and potential customers</p>
-            <button className="btn btn-primary">Get Started</button>
-        </div>
-        <div className="div">
-            <img src="images.jpg" />
-        </div>
-    </div>
+     <div id="home" className="div">
+  <div className="side1">
+    <h2>Digital Marketing</h2>
+    <h1>CRM</h1>
+    <p>Customer relationship management (CRM) is a technology for managing all your company's relationships and interactions
+      with customers and potential customers</p>
+    <button className="btn btn-primary">Get Started</button>
+  </div>
+  <div className="div">
+    <img src="images.jpg" alt='crm.jpg' />
+  </div>
+</div>
+
      
     </>
   )
