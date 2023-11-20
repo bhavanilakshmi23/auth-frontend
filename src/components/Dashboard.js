@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -53,21 +52,23 @@ const Dashboard = () => {
           </Nav>
           
         </Container>
-      </Navbar>
-      </div>
-     <br/>
-     <div id="home" className="div">
+          </Navbar>
+            <div id="home" >
   <div className="side1">
-    <h2>Digital Marketing</h2>
-    <h1>CRM</h1>
+    <h2 className='head2'>Digital Marketing</h2>
+              <h1 className='head1'>CRM</h1>
+              <hr  className='hr'/>
     <p>Customer relationship management (CRM) is a technology for managing all your company's relationships and interactions
       with customers and potential customers</p>
     <button className="btn btn-primary">Get Started</button>
   </div>
-  <div className="div">
-    <img src="/images.jpg" alt='crm.jpg' />
+  <div className="img">
+  
   </div>
 </div>
+      </div>
+     <br/>
+   
 
      
     </>
@@ -75,3 +76,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
