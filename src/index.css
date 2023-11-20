@@ -7,3 +7,44 @@
     text-align: center;
     margin-top: 20px;
 }
+#home{
+    display: flex;
+   
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.side1{
+    text-align: justify;
+    color: black;
+    width: 250px;
+    height: 250px;
+   
+}
+p{
+    color: rgba(0, 0, 255, 0.496);
+    text-align: justify;
+    font-style: italic;
+}
+h1{
+    color: blue;
+    font-weight: bold;
+    font-style: oblique;
+    
+}
+h2{
+    color: rgba(0, 0, 255, 0.585);
+    font-style: oblique;
+}
+img{
+    width: 600px;
+    height: 400px;
+ filter: drop-shadow(16px 7px 8px blue);
+}
+
+.btn{
+    padding: 6px;
+    margin-top: 5px;
+    border-radius: 10px;
+    color:white;
+}
