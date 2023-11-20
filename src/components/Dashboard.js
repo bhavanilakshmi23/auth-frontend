@@ -56,7 +56,18 @@ const Dashboard = () => {
       </Navbar>
       </div>
      <br/>
-
+    <div id="home" class="div">
+        <div class="side1">
+            <h2>Digital Marketing</h2>
+            <h1>CRM</h1>
+            <p>Customer relationship management (CRM) is a technology for managing all your company's relationships and interactions
+            with customers and potential customers</p>
+            <button class="btn btn-primary">Get Started</button>
+        </div>
+        <div class="div">
+            <img src="images.jpg" alt="">
+        </div>
+    </div>
      
     </>
   )
