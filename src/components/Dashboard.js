@@ -16,7 +16,7 @@ const Dashboard = () => {
         <Container>
           <Navbar.Brand href="#home">CRM</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#home" classname='homepage'>Home</Nav.Link>
             <Nav.Link href="#features">About</Nav.Link>
              <NavDropdown title="Leads" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">New</NavDropdown.Item>
