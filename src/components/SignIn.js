@@ -28,8 +28,7 @@ function SignIn() {
         }
     }
 
-  return
-  <div className='container-fluid'>
+  return <div className='container-fluid'>
      <div className='signup-wrapper'>
   <h1 className='title'>Sign In</h1>
  
