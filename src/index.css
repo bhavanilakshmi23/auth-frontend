@@ -1,11 +1,9 @@
-.signup-wrapper{
-    width: 50%;
-    margin: auto;
-}
-
-.title{
-    text-align: center;
-    margin-top: 20px;
+body{
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
 }
 #home{
     display: flex;
@@ -32,6 +30,7 @@ p{
     margin-top: 5px;
     border-radius: 10px;
     color:white;
+    font-style: oblique;
 }
 
 .head1 {
@@ -56,4 +55,111 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.navbar{
+    background: rgba(255, 255, 255, 0.735);
+}
+
+.link2,.link3,.link4,.link5{
+    padding: 10px;
+    background: blue;
+    border-radius: 50px;
+    border: none;
+    width:100px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+   font-style: oblique;
+}
+
+.link1{
+    margin-left: 100px;
+    padding: 5px;
+    width: 100px;
+   text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 30px;
+  font-style: oblique;
+  border: 2px dashed blue;
+
+}
+.link2{
+    margin-left: 700px;
+}
+
+.link4{
+   margin-right: 5px;
+}
+.link5{
+    margin-right: 40px;
+}
+
+.link2:hover{
+    font-weight: 700;
+    font-size:  17px;
+}
+.link3:hover {
+    font-weight: 700;
+    font-size: 17px;
+}
+.link4:hover {
+    font-weight: 700;
+    font-size: 17px;
+}
+.link5:hover {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+.head{
+   padding-left: 70px;
+   padding-bottom: 20px;
+   margin-top: 80px;
+   font-style: oblique;
+   color: rgba(26, 65, 220, 0.874);
+   text-decoration: overline underline whitesmoke ;
+}
+
+.btn-group-vertical{
+   margin-left: 10px;
+   height: 400px;
+   margin-bottom: 20px;
+   width: 300px;   
+}
+.btn-group-vertical button{
+    padding: 5px;
+    color:blue;
+    background: rgba(245, 245, 245, 0.624);
+    border: none;
+   font-weight: 800px;
+    
+}
+
+.title{
+    text-align: center;
+    font-style: oblique;
+    color: blue;
+    text-decoration: underline;
+}
+
+.button3{
+   margin-left: 30%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.signup-wrapper {
+    border: 2px solid blue;
+    margin: 20px;
+    border-radius: 20px ;
+    box-shadow: 3px 4px 7px 1px  blue;
+    width: 25%;
+    height: auto;
+    padding: 20px;
+   margin-top: 150px;
+   margin-left: 500px;
+ 
 }
