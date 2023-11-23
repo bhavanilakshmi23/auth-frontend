@@ -21,17 +21,19 @@ function SignIn() {
             {
                 toast.success(res.data.message)
                 sessionStorage.setItem('token',res.data.token)
-                navigate('/dashboard')
+                navigate('/home')
             }
         } catch (error) {
             toast.error(error.response.data.error || error.response.data.message)
         }
     }
 
-  return <div className='container-fluid'>
-       <div className='signup-wrapper'>
+  return
+  <div className='container-fluid'>
+     <div className='signup-wrapper'>
   <h1 className='title'>Sign In</h1>
- <Form onSubmit={handleSignin}>
+ 
+  <Form onSubmit={handleSignin}>
     <Form.Group className="mb-3" >
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" name="email"/>
@@ -40,10 +42,10 @@ function SignIn() {
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" name="password"/>
     </Form.Group>
-    <Button variant="primary" type="submit" cclassName="button3">
+    <Button variant="primary" type="submit" className='button3'>
       Submit
-    </Button>
-      <p className="para">Don't have an account?</p>
+        </Button>
+        <p className="para">Don't have an account?</p>
         <span><Link to='/sign-up'>Create New Account</Link></span>
   </Form>
   </div>
