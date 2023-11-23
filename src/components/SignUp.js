@@ -31,9 +31,10 @@ function SignUp() {
     }
 
   return <div className='container-fluid'>
-       <div className='signup-wrapper'>
+    <div className='signup-wrapper'>
     <h1 className='title'>Sign Up</h1>
-   <Form onSubmit={handleSignup}>
+    
+    <Form onSubmit={handleSignup}>
     <Form.Group className="mb-3" >
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter Name" name="name"/>
@@ -50,7 +51,7 @@ function SignUp() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name="password"/>
       </Form.Group>
-      <Button variant="primary" type="submit" className="button3">
+        <Button variant="primary" type="submit" className="button3">
         Submit
       </Button>
     </Form>
