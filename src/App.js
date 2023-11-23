@@ -1,8 +1,11 @@
 import React from "react";
-import Dashboard from "./components/Dashboard";
+
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom'
+import LeadManagement from "./components/LeadManagement";
+import Home from "./components/Home";
+import Service from "./components/Service";
 
 function App() {
   return <>
@@ -10,7 +13,9 @@ function App() {
     <Routes>
       <Route path='/sign-in' element={<SignIn/>}/>
       <Route path='/sign-up' element={<SignUp/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/home' element={<Home />} />
+        <Route path='/service' element={<Service />} />
+        <Route path='/lead-management' element={<LeadManagement />} />
       <Route path='*' element={<Navigate to = '/sign-in'/>}/>
     </Routes>
   </BrowserRouter>
@@ -18,3 +23,4 @@ function App() {
 }
 
 export default App;
+
