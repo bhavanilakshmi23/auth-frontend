@@ -1,7 +1,4 @@
-Admin sign in
 
-email - samyu@gmail.com
-password - 12345
 
 # Getting Started with Create React App
 
