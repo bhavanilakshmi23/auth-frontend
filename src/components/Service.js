@@ -1,26 +1,184 @@
 import React, { useState } from 'react';
-import Navbar from "./Navbar";
+import { Link } from 'react-router-dom'
 
 const Service = () => {
-  const [serviceStatus, setServiceStatus] = useState('new');
+  const initialUsers = [
+    { id: 1, name: 'Johncy', email: 'johncy@gmail.com', phone: '9876543256', Status: 'In process' },
+    { id: 2, name: 'chitra', email: 'chitra@gmail.com', phone: '9896543456', Status: 'Completed' },
+  ];
 
-  const handleStatusChange = (newStatus) => {
-    setServiceStatus(newStatus);
+  const options = ['Created', 'Realeased', 'Open','Canceld','In process','Completed']; 
+
+  const [users, setUsers] = useState(initialUsers);
+  const [editingUser, setEditingUser] = useState(null);
+  const [newUser, setNewUser] = useState({ name: '', email: '', phone: '', Status: '' });
+
+  const handleEdit = (id) => {
+    const userToEdit = users.find((user) => user.id === id);
+    setEditingUser(userToEdit);
+  };
+
+  const handleSave = () => {
+    setUsers((prevUsers) =>
+      prevUsers.map((user) =>
+        user.id === editingUser.id ? editingUser : user
+      )
+    );
+    setEditingUser(null);
+  };
+
+  const handleCancel = () => {
+    setEditingUser(null);
+  };
+
+  const handleInputChange = (e, isEditing = false) => {
+    const targetUser = isEditing ? editingUser : newUser;
+    const updatedUser = {
+      ...targetUser,
+      [e.target.name]: e.target.value,
+    };
+
+    if (isEditing) {
+      setEditingUser(updatedUser);
+    } else {
+      setNewUser(updatedUser);
+    }
+  };
+
+  const handleAdd = () => {
+    const newUserWithId = {
+      ...newUser,
+      id: users.length + 1,
+    };
+
+    setUsers([...users, newUserWithId]);
+    setNewUser({ name: '', email: '', phone: '', Status: '' });
+  };
+
+  const handleDelete = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
   };
 
   return (
-      <div>
-          <Navbar/>
-      <h2 className='head'>ServiceStatus: {serviceStatus}</h2>
-<div class="btn-group-vertical" role="group" aria-label="Basic example">
-      <button onClick={() => handleStatusChange('Created')} className="btn btn-primary">Created</button>
-      <button onClick={() => handleStatusChange('Released')} className="btn btn-primary">Released</button>
-      <button onClick={() => handleStatusChange('Open')} className="btn btn-primary">Open</button>
-      <button onClick={() => handleStatusChange('In process')} className="btn btn-primary">In process</button>
-      <button onClick={() => handleStatusChange('Canceled')} className="btn btn-primary">Canceled</button>
-      <button onClick={() => handleStatusChange('Completed')} className="btn btn-primary">Completed</button>
-</div>
-    </div>
+    <>
+     <Link to="/home" className="btn btn-warning w-auto  fs-5 p-2 fw-normal my-2 mx-5 text-center">Back</Link>
+    <div className='d-flex flex-column bg-whitesmoke align-items-center m-50 p-20'>
+      <h2 className='fst-italic'>Service</h2>
+      <table className='table table-striped'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>
+                {editingUser && editingUser.id === user.id ? (
+                  <input
+                    type="text"
+                    name="name"
+                    value={editingUser.name}
+                    onChange={(e) => handleInputChange(e, true)}
+                  />
+                ) : (
+                  user.name
+                )}
+              </td>
+              <td>
+                {editingUser && editingUser.id === user.id ? (
+                  <input
+                    type="text"
+                    name="email"
+                    value={editingUser.email}
+                    onChange={(e) => handleInputChange(e, true)}
+                  />
+                ) : (
+                  user.email
+                )}
+              </td>
+              <td>
+                {editingUser && editingUser.id === user.id ? (
+                  <input
+                    type="text"
+                    name="phone"
+                    value={editingUser.phone}
+                    onChange={(e) => handleInputChange(e, true)}
+                  />
+                ) : (
+                  user.phone
+                )}
+              </td>
+              <td>
+                {editingUser && editingUser.id === user.id ? (
+                  <select
+                    name="Status"
+                    value={editingUser.Status}
+                    onChange={(e) => handleInputChange(e, true)}
+                  >
+                    {options.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  user.Status
+                )}
+              </td>
+              <td>
+                {editingUser && editingUser.id === user.id ? (
+                  <>
+                    <button onClick={handleSave} className=' btn btn-success'>Save</button>
+                    <button onClick={handleCancel} className='btn btn-danger' >Cancel</button>
+                  </>
+                ) : (
+                  <>
+                    <button onClick={() => handleEdit(user.id)} className=' btn btn-success p-8 m-1'>Edit</button>
+                    <button onClick={() => handleDelete(user.id)} className='btn btn-danger p-8 m-1'>Delete</button>
+                  </>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+     
+      <div className='d-flex flex-column  my-7 p-10 w-50 h-75 bg-light '>
+      <h2 className='text-center fst-italic'>Add New User</h2>
+      <div className='mx-auto p-10 w-75'>
+        <label className='mx-3 my-2'>Name:</label>
+        <input type="text" name="name" value={newUser.name} onChange={(e) => handleInputChange(e)} />
+      </div>
+      <div className='mx-auto p-10 w-75'>
+        <label className='mx-3 my-2'>Email:</label>
+        <input type="text" name="email" value={newUser.email} onChange={(e) => handleInputChange(e)} />
+      </div>
+      <div className='mx-auto p-10 w-75'>
+        <label className='mx-3 my-2'>Phone:</label>
+        <input type="text" name="phone" value={newUser.phone} onChange={(e) => handleInputChange(e)} />
+      </div>
+      <div className='mx-auto p-10 w-75'>
+        <label className='mx-3 my-2'>Status:</label>
+        <select name="Status" value={newUser.Status} onChange={(e) => handleInputChange(e)}>
+          <option value="">Select option</option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <button onClick={handleAdd} className='btn btn-primary p-1 w-75 mx-auto'>Add User</button>
+      </div>
+      </div>
+      </>
   );
 };
 
